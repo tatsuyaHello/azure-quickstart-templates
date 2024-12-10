@@ -163,3 +163,5 @@ resource keyVaultSecret 'Microsoft.KeyVault/vaults/secrets@2019-09-01' = {
 
 output functionAppHostName string = functionApp.properties.defaultHostName
 output functionName string = functionNameComputed
+output funckey string = listKeys('${functionApp.id}/host/default', functionApp.apiVersion).functionKeys.default
+
